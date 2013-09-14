@@ -1,4 +1,5 @@
 var config = require('../../config.js');
+var range_check = require('range_check');
 
 exports.index = function(req, res){
         res.json( { status: 'ok' });
@@ -12,7 +13,8 @@ exports.favicon = function(req, res){
 exports.github = function(req, res){
         authorizedIps = config.security.authorizedIps;
         var payload = req.body.payload;
-        if (payload && authorizedIps.indexOf(req.ip) >= 0) {
+        var validip = range_check.in_range(req.ip, authorizedIps);
+        if (payload && validip == true) {
                 payload = JSON.parse(payload);
                 console.log('payload', payload);
                 if (payload.ref === 'refs/heads/master') {
