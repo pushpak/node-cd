@@ -16,7 +16,9 @@ exports.github = function(req, res){
                 payload = JSON.parse(payload);
                 console.log('payload', payload);
                 if (payload.ref === 'refs/heads/master') {
-                        myExec(config.action.exec);
+                    myExec(config.action.prod);
+                } else {
+                    myExec(config.action.dev);
                 }
                 res.writeHead(200);
         } else {

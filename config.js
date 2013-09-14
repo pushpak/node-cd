@@ -9,7 +9,10 @@ Private = {
 		'204.232.175.75',
 		'108.171.174.178'
 	]},
-	action: {exec: "../node-cd.sh"}
+	action: {
+		prod: "../node-prod.sh",
+		dev: "../node-dev.sh"
+	}
 };
 
 module.exports = Private;
