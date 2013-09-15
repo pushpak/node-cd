@@ -28,6 +28,9 @@ It can execute any script you want on your server: deployment, testing, etc.
 
 	cd node-cd/src
 	forever start -o node-cd-output.txt -l node-cd-log.txt -e node-cd-error.txt -a app.js
+	
+	chmod 755 node-dev.sh
+	chmod 755 node-prod.sh
 
 ## Usage
 
