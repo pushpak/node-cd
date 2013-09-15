@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "Development develop branch"
+echo Development develop branch
 # Place your script here
 cd /home/ubuntu/theapp
-git checkout develop
-git pull origin develop
+exec git checkout develop
+exec git pull origin develop

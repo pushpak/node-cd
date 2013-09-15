@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "Production master branch"
+echo Production master branch
 # Place your script here
 cd /home/ubuntu/theapp
-git checkout master
-git pull origin master
+exec git checkout master
+exec git pull origin master
