@@ -4,3 +4,5 @@ echo Development develop branch
 cd /home/ubuntu/theapp
 git checkout develop
 git pull origin develop
+# push to AWS elasticbeanstalk (cli tools assumed installed and configured in the server where this app is hosted)
+git aws.push

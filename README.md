@@ -27,7 +27,7 @@ It can execute any script you want on your server: deployment, testing, etc.
 	npm install
 
 	cd node-cd/src
-	forever start -o node-cd-output.txt -l node-cd-log.txt -e node-cd-error.txt -a app.js
+	forever start -o node-cd-output.txt -l node-cd-log.txt -e node-cd-error.txt -a -v app.js
 	
 	chmod 755 node-dev.sh
 	chmod 755 node-prod.sh
@@ -37,4 +37,4 @@ It can execute any script you want on your server: deployment, testing, etc.
 * Edit the `node-prod.sh` file for `master` branch triggers and `node-dev.sh` file for `develop` branch triggers to execute whatever you like after your commits (ex: stop server, git pull, start server)
 * Set your post-receive hook as described [here](https://help.github.com/articles/post-receive-hooks) with the url `http://yourserver.com:61440/github`
 * Run the app (default listen on 61440 port)
-	`forever start -o node-cd-output.txt -l node-cd-log.txt -e node-cd-error.txt -a app.js`
+	`forever start -o node-cd-output.txt -l node-cd-log.txt -e node-cd-error.txt -a -v app.js`
